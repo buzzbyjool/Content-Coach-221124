@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #B94F98;
+  --primary-dark: #9E4382;
+}
+
+body {
+  @apply antialiased text-gray-900;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400;
+}
+
+/* Enhanced input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
+input[type="search"],
+select,
+textarea {
+  @apply px-4 py-2.5;
+}
+
+/* Enhanced table cells */
+td, th {
+  @apply px-6 py-4;
+}
+
+/* AI Assistant chat input */
+.chat-input {
+  @apply px-4 py-3;
+}
+
+/* Search bar specific styling */
+.search-input {
+  @apply pl-10 pr-4 py-2.5;
+}
+
+/* Form labels spacing */
+label {
+  @apply mb-1.5 inline-block;
+}
+
+/* Table header specific styling */
+th {
+  @apply font-medium text-gray-500 uppercase tracking-wider;
+}
+
+/* Table cell content alignment */
+td {
+  @apply align-middle;
+}
+
+/* New Company Coach button animation */
+@keyframes pulse-gradient {
+  0% {
+    background-position: 0% 50%;
+    transform: scale(1);
+    box-shadow: 0 4px 6px -1px rgba(185, 79, 152, 0.1), 0 2px 4px -1px rgba(185, 79, 152, 0.06);
+  }
+  50% {
+    background-position: 100% 50%;
+    transform: scale(1.02);
+    box-shadow: 0 10px 15px -3px rgba(185, 79, 152, 0.2), 0 4px 6px -2px rgba(185, 79, 152, 0.1);
+  }
+  100% {
+    background-position: 0% 50%;
+    transform: scale(1);
+    box-shadow: 0 4px 6px -1px rgba(185, 79, 152, 0.1), 0 2px 4px -1px rgba(185, 79, 152, 0.06);
+  }
+}
+
+.new-coach-button {
+  @apply inline-flex items-center justify-center px-4 py-2 border-0 text-sm font-medium rounded-md text-white;
+  background: linear-gradient(135deg, #B94F98 0%, #9E4382 50%, #B94F98 100%);
+  background-size: 200% 200%;
+  animation: pulse-gradient 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.new-coach-button:hover {
+  @apply opacity-90;
+  animation-play-state: paused;
+}
